@@ -23,6 +23,9 @@ public class JPAProject {
                 case 2:
                     searchEmployee(s);
                     break;
+                case 3:
+                    deleteEmployee(s);
+                    break;
                 case 4:
                     updateEmployee(s);
                     break;
