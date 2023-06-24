@@ -2,6 +2,7 @@ package main;
 
 import Control.EmployeeController;
 import jakarta.transaction.Transactional;
+import java.util.List;
 import model.Employee;
 import java.util.Scanner;
 
@@ -13,7 +14,8 @@ public class JPAProject {
         int opt;
         
         while(cont){
-            System.out.println("1) Enter employee\n2) Search empployee \n3) Delete Employee \n4) Update Employee ");
+            System.out.println("1) Enter employee\n2) Search empployee \n3) Delete Employee "
+                    + "\n4) Update Employee \n5) Get all employees");
             System.out.println("Select an option");
             opt = s.nextInt();
             switch(opt){
@@ -28,6 +30,9 @@ public class JPAProject {
                     break;
                 case 4:
                     updateEmployee(s);
+                    break;
+                case 5: 
+                    getAllEmployees(s);
                     break;
             }
             
@@ -83,5 +88,14 @@ public class JPAProject {
         int id = s.nextInt();
         EmployeeController em = new EmployeeController();
         em.delete(id);
+    }
+
+    private static void getAllEmployees(Scanner s) {
+        System.out.println("--------ALL EMPLOYEES----------------");
+        EmployeeController em = new EmployeeController();
+        List<Employee> ems = em.getAll();
+        for (Employee e: ems){
+            System.out.println(e.toString());
+        }
     }
 }
