@@ -74,7 +74,11 @@ public class JPAProject {
         em.update(id, salary);
     }
     
-    public static void deleteEmployee(Scanner r){
-        
+    public static void deleteEmployee(Scanner s){
+        System.out.println("--------DELETE EMPLOYEE--------------");
+        System.out.println("Enter id: ");
+        int id = s.nextInt();
+        EmployeeController em = new EmployeeController();
+        em.delete(id);
     }
 }
