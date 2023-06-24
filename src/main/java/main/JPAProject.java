@@ -23,6 +23,9 @@ public class JPAProject {
                 case 2:
                     searchEmployee(s);
                     break;
+                case 4:
+                    updateEmployee(s);
+                    break;
             }
             
             
@@ -61,8 +64,14 @@ public class JPAProject {
         System.out.println(em.toString());
     } 
     
-    public static void updateEmployee(Scanner r){
-        
+    public static void updateEmployee(Scanner s){
+        System.out.println("----------UPDATE EMPLOYEE------------");
+        System.out.println("Enter id: ");
+        int id = s.nextInt();
+        System.out.println("Enter new salary: ");
+        float salary = s.nextFloat();
+        EmployeeController em = new EmployeeController();
+        em.update(id, salary);
     }
     
     public static void deleteEmployee(Scanner r){
