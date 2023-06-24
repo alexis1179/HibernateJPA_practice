@@ -74,6 +74,7 @@ public class EmployeeController {
             } else {
                 em.setSalary(salary);//update salary
                 transaction.commit();
+                System.out.println("EMployee updated succesfully!! :)");
             }
             session.close();
         } catch (Exception e) {
@@ -93,6 +94,7 @@ public class EmployeeController {
             } else {
                 session.remove(em);
                 transaction.commit();
+                System.out.println("Employee deleted from db succesfully!! :)");
             }
         } catch (Exception e) {
             e.printStackTrace();
